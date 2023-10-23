@@ -9,7 +9,7 @@
 
 @implementation NSObject (Swizzling)
 
-+ (BOOL)gl_swizzleMethod: (SEL)origSel withMethod: (SEL)altSel
++ (BOOL)swizzleMethod: (SEL)origSel withMethod: (SEL)altSel
 {
 	Method origMethod = class_getInstanceMethod(self, origSel);
 	Method altMethod = class_getInstanceMethod(self, altSel);
@@ -29,9 +29,9 @@
 	return YES;
 }
 
-+ (BOOL)gl_swizzleClassMethod:(SEL)origSel withMethod:(SEL)altSel
++ (BOOL)swizzleClassMethod: (SEL)origSel withMethod: (SEL)altSel
 {
-	return [object_getClass((id)self) gl_swizzleMethod:origSel withMethod:altSel];
+	return [object_getClass((id)self) swizzleMethod: origSel withMethod: altSel];
 }
 
 @end

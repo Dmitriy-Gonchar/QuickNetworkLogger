@@ -11,7 +11,7 @@
 
 @interface NSObject (Swizzling)
 
-+ (BOOL)gl_swizzleMethod: (SEL)origSel withMethod: (SEL)altSel;
-+ (BOOL)gl_swizzleClassMethod: (SEL)origSel withMethod: (SEL)altSel;
++ (BOOL)swizzleMethod: (SEL)origSel withMethod: (SEL)altSel;
++ (BOOL)swizzleClassMethod: (SEL)origSel withMethod: (SEL)altSel;
 
 @end
